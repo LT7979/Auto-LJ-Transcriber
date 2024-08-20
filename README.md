@@ -5,11 +5,17 @@ Place all of your .wav files to be transcribed in a folder named "wavs". The fol
 is where the python script assumes they are. Folder structure should look like:
 
 /Some_Directory
+
     | transcibe_LJ.py  
+    
     | wavs/
+    
         | audio000.wav
+        
         | audio001.wav
+        
         | ...
+        
 
 from here you can start the open-ai whisper API.
 In this example I use Docker to run it. Installation and Documentation for the Whisper API can be found at
