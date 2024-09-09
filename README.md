@@ -1,6 +1,8 @@
 # Auto-LJ-Transcriber
 This script (transcribeLJ.py) will automatically transcribe and format your .wav files to create a transcribed.csv fie in the LJ dataset format.
 
+Please make sure that you pip install the python requests module for this to work!!
+
 Place all of your .wav files to be transcribed in a folder named "wavs". The folder name is just an example but that
 is where the python script assumes they are. Folder structure should look like:
 
@@ -19,6 +21,10 @@ https://github.com/ahmetoner/whisper-asr-webservice
 running the whisper API container:
 
     sudo docker run -d --gpus all -p 9000:9000 -e ASR_MODEL=base -e ASR_ENGINE=openai_whisper onerahmet/openai-whisper-asr-webservice:latest-gpu
+
+If you DO NOT have an nvidia gpu run this command to run on CPU:
+
+    docker run -d -p 9000:9000 -e ASR_MODEL=base -e ASR_ENGINE=openai_whisper onerahmet/openai-whisper-asr-webservice:latest
 
 once the service is running, make sure you are in the directory of your transcribe_LJ.py script. and run it:
 
